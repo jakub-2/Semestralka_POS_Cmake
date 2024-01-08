@@ -198,7 +198,7 @@ int main()
 					tahUkonceny = true;
 					checkPozicia = 100; // pozicia mimo boardu kedze sa skiplo
 				} else if (hrac->tahCheck(roll, tah - 1)) {
-					checkPozicia = (hrac->getPozicia(tah - 1) % 40) + 1;
+					checkPozicia = (hrac->getPozicia(tah - 1) % 40);
 					tahUkonceny = true;
 				} else {
 					std::cout << "Zly tah" << std::endl;
