@@ -88,6 +88,33 @@ std::string Hrac::getFarba()
 	return farba;
 }
 
+bool Hrac::vyhral()
+{
+	for (Panacik* panak : panacikovia)
+	{
+		if (!panak->jeVDomceku())
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+void Hrac::posun(int idFigurky, int roll)
+{
+	if (roll == -1)
+	{
+		panacikovia.at(idFigurky)->vyhod();
+	}
+	else if (roll == 6 and panacikovia.at(idFigurky)->getPozicia() == -1)
+	{
+		panacikovia.at(idFigurky)->nastav();
+	}
+	else {
+		panacikovia.at(idFigurky)->potiahni(roll);
+	}
+}
+
 bool Hrac::polickoOkupovane(int idFigurky, int buducaPozicia)
 {
 	for (int i = 0; i < 4; i++) {

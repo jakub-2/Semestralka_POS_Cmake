@@ -14,7 +14,8 @@ public:
 	int getPozicia(int idFigurky);
 	int getOffset();
 	std::string getFarba();
-
+	bool vyhral();
+	void posun(int idFigurky, int roll);
 	//void potiahni(int roll, int idFigurky);
 
 private:
